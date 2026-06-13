@@ -212,8 +212,8 @@
 // ============================================================
 // CONFIGURATION — replace these with your Supabase project details
 // ============================================================
-const SUPABASE_URL  = 'YOUR_SUPABASE_URL';      // e.g. https://xxxx.supabase.co
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY'; // your anon/public key
+const SUPABASE_URL  = 'https://enxtnlmnvvczxbpnslys.supabase.co/rest/v1/';      // e.g. https://xxxx.supabase.co
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVueHRubG1udnZjenhicG5zbHlzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEzMjg3NzQsImV4cCI6MjA5NjkwNDc3NH0.Uo13bHwMZYTjtEnr9D0KtbLekdGw-MxIRHyJ7TsKkJA'; // your anon/public key
 // ============================================================
 
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -442,7 +442,7 @@ function hashCode(s) { let h=0; for(let i=0;i<s.length;i++) h=Math.imul(31,h)+s.
 
 // ─── AUTO-LOGIN ───────────────────────────────────────────────
 (async () => {
-  if (SUPABASE_URL === 'YOUR_SUPABASE_URL') return; // demo mode, show auth
+  if (SUPABASE_URL === 'https://enxtnlmnvvczxbpnslys.supabase.co/rest/v1/') return; // demo mode, show auth
   const { data } = await supabase.auth.getSession();
   if (data.session?.user) await initApp(data.session.user);
 })();
